@@ -1,0 +1,42 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:60px;
+   width:100%;
+   background:#01050c;
+   text-decoration-color: white;
+}
+.footer-text{
+  color: white;
+  height: 25px;
+}
+.main{
+  padding-top: 50px;
+}

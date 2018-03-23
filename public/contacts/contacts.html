@@ -1,0 +1,70 @@
+<div class="row" ng-controller="ContactsCtrl">
+  <div class="col-md-5" ng-show="addFormShow">
+    <h3>Add Contacts</h3>
+    <form ng-submit="addContacts()">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" ng-model="name" aria-describedby="emailHelp" placeholder="Enter name">
+      </div>
+
+      <div class="form-group">
+        <label>email</label>
+        <input type="email" ng-model="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+
+      <div class="form-group">
+        <label>Phone number</label>
+        <input type="number" class="form-control" ng-model="phone" aria-describedby="emailHelp" placeholder="Enter your number">
+      </div>
+
+      <button type="submit" name="button" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <div class="col-md-5" ng-show="editFormShow">
+    <h3>Edit Contacts</h3>
+    <form ng-submit="editContact()">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" ng-model="name" aria-describedby="emailHelp" placeholder="Enter name">
+      </div>
+
+      <div class="form-group">
+        <label>email</label>
+        <input type="email" ng-model="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+
+      <div class="form-group">
+        <label>Phone number</label>
+        <input type="number" class="form-control" ng-model="phone" aria-describedby="emailHelp" placeholder="Enter your number">
+      </div>
+
+      <button type="submit" name="button" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <div class="col-md-7">
+    <h3>
+       Contacts
+    </h3>
+    <table class="table table-stripped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone number</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="contact in contacts">
+          <td>{{contact.name}}</td>
+          <td>{{contact.email}}</td>
+          <td>{{contact.phone}}</td>
+          <td><a class="btn btn-warning" ng-click="showEditForm(contact)">Edit</a>&nbsp<a class="btn btn-danger" ng-click="removeContact(contact)">Remove</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-7">
+
+  </div>
+</div>
